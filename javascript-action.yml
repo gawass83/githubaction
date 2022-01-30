@@ -1,0 +1,14 @@
+name: javascript_actions
+
+on: ["push"]
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+  - name: running javacript hello world
+    id: test
+    uses: actions/hello-world-javascript-action@v1.1
+    with:
+      who-to-greet: Shubham
+  - name: Log creation time
+    run: echo "${{ steps.test.outputs.time }}"
