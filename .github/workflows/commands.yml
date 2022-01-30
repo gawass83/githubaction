@@ -1,0 +1,22 @@
+name: test-commands
+
+on: [push]
+
+jobs:
+  testing_commands:
+    runs-on: ubuntu-latest
+    name: testing bash commands
+    uses: echo hello world
+    name: multiline script
+    uses: |
+      npm -v
+      node -v
+  testing commands on windows:
+    runs-on: windows-latest
+    needs: testing_commands
+    name: testing psh commands
+    uses: Get-Location
+    name: multiline script
+    uses: pwd
+    shell: bash
+  
