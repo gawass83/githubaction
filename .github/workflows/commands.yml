@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: testing bash commands
-      uses: echo hello world
+      run: echo hello world
     - name: multiline script
-      uses: |
+      run: |
         npm -v
         node -v
   testing_commands_on_windows:
@@ -17,8 +17,8 @@ jobs:
     needs: testing_commands
     steps:
     - name: testing psh commands
-      uses: Get-Location
+      run: Get-Location
     - name: multiline script
-      uses: pwd
+      run: pwd
       shell: bash
   
