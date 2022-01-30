@@ -5,15 +5,17 @@ on: [push]
 jobs:
   testing_commands:
     runs-on: ubuntu-latest
+    steps:
     - name: testing bash commands
       uses: echo hello world
     - name: multiline script
       uses: |
         npm -v
         node -v
-  testing commands on windows:
+  testing_commands_on_windows:
     runs-on: windows-latest
     needs: testing_commands
+    steps:
     - name: testing psh commands
       uses: Get-Location
     - name: multiline script
