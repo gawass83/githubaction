@@ -4,11 +4,14 @@ on: push
 jobs:
   docker-ps:
     runs-on: ubuntu-latest
-    container: 17-alpine3.14
+    container: 
+      image: 17-alpine3.14
+      credentials:
+        username: gawass83
+        password: ${{ secrets.docker_token}}
     steps:
-      - name: docker login
-        run: echo ${{ secrets.docker_token }} | docker login -u ${{ secrets.docker_id }} --password-stdin
       - name: check nodes version
         run: |
           node -v
           cat /etc/os-release
+          
