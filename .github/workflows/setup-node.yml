@@ -3,6 +3,7 @@ on: push
 jobs:
   setup-node:
     runs-on: ubuntu-latest
+    steps:
     - name: check node version
       run: node -v
     - name: use node version
