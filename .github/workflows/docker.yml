@@ -4,11 +4,7 @@ on: push
 jobs:
   docker-ps:
     runs-on: ubuntu-latest
-    container: 
-      image: 17-alpine3.14
-      credentials:
-        username: gawass83
-        password: Digicafe@12
+    container: node:14.16
     steps:
       - name: check nodes version
         run: |
