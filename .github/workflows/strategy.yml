@@ -8,8 +8,11 @@ jobs:
         node_version: [6, 8, 10]
         exclude:
         -  os: ubuntu-latest
-           node_version: 8
-    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+           node_version: 8, 10
+        -  os: mac-os-latest
+           node_version: 8, 10
+        
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ${{ matrix.os }}
     steps:
       - name: Log node version
