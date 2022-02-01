@@ -1,0 +1,13 @@
+name: setup-node
+on: push
+jobs:
+  setup-node:
+    runs-on: ubuntu-latest
+    - name: check node version
+      run: node -v
+    - name: use node version
+      uses: actions/setup-node@v1
+      with:
+        node-version: 6
+    - name: check node version
+      run: node -v 
