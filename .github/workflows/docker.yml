@@ -1,0 +1,12 @@
+name: docker
+on: push
+
+jobs:
+  docker-ps:
+    runs-on: ubuntu-latest
+    container: 17-alpine3.14
+    steps:
+      - name: check nodes version
+        run: |
+          node -v
+          cat /etc/os-release
