@@ -1,0 +1,14 @@
+name: functions
+
+on: push
+
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing_functions
+        run: |
+          echo ${{ contains( 'hello' , 'll' )}}
+          echo ${{ startswith( 'hello' , 'he' )}}
+          echo ${{ endswith( 'hello' , 'o' )}}
+          echo ${{ format('Hello' {0} {1} {2} , 'World', '!', '!')}}
