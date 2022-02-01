@@ -6,6 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     container: 17-alpine3.14
     steps:
+      - name: docker login
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.docker_id }}
+          password: ${{ secrets.docker_token }}
+          
       - name: check nodes version
         run: |
           node -v
