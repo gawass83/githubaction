@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     container: node:14.16
     steps:
+      - name: docker login
+        run: |
+          docker login -u ${{ secrets.DOCKER_ID }} -p ${{ secrets.DOCKER_TOKEN}}
       - name: check nodes version
         run: |
           node -v
