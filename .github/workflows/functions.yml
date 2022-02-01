@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: testing_functions
         run: |
-          echo ${{ contains( 'hello' , 'll' )}}
-          echo ${{ startswith( 'hello' , 'he' )}}
-          echo ${{ endswith( 'hello' , 'o' )}}
-          echo ${{ format('Hello' {0} {1} {2}' , 'World', '!', '!')}}
+          echo ${{ contains( 'hello' , 'll' ) }}
+          echo ${{ startswith( 'hello' , 'he' ) }}
+          echo ${{ endswith( 'hello' , 'o' ) }}
+          echo ${{ format('Hello' {0} {1} {2}' , 'World', '!', '!') }}
