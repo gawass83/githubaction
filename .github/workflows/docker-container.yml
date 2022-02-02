@@ -11,7 +11,8 @@ jobs:
           entrypoint: "/bin/echo"
           args: "Hello World"
       - name: echo node version
-        uses:
+        uses: docker://node:12.14.1-alpine3.10
+        with:
           entrypoint: "/usr/local/bin/node"
           args: "-v"
 
