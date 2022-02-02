@@ -1,0 +1,12 @@
+name: slack-test
+on: push
+
+jobs:
+  slack-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: using slack text image
+        uses: docker://technosophos/slack-notify
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: "Hello World"
