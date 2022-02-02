@@ -10,4 +10,9 @@ jobs:
         with:
           entrypoint: "/bin/echo"
           args: "Hello World"
+      - name: echo node version
+        uses:
+          entrypoint: "/usr/local/bin/node"
+          args: "-v"
+
 
